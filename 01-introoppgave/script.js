@@ -1,0 +1,1 @@
+console.log("%cTest", "color: red;");
