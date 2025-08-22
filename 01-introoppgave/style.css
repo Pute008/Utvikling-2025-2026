@@ -1,6 +1,9 @@
 html, body {
     background: black;
     width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -21,32 +24,59 @@ html, body {
     font-size: 3rem;
     display: flex;
     justify-content: center;
-    /* background-color: red; */
+    background-color: rgb(46, 71, 44);
+}
+
+.header h1 {
+    font-size: 3rem;
 }
 
 .menu {
     grid-area: menu;
     display: flex;
     justify-content: center;
-    width: 100%;
-    height: 2rem;
+    height: 50px;
     font-size: 3rem;
-    /* background-color: yellow; */
+    background-color: rgb(177, 177, 177);
+    margin: 0;
+    padding: 1.5rem;
 }
 
 .main {
     grid-area: main;
     padding: 5rem;
-    /* background-color: green; */
+    background-color: rgb(78, 94, 78);
 }
 
 .footer {
     grid-area: footer;
     display: flex;
     justify-content: center;
-    /* background-color: blue; */
+    background-color: rgb(89, 89, 108);
 }
 
+ul {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    /* flex-direction: row-reverse; */
+    list-style: none;
+    text-decoration: none;
+}
+
+#chrisChanBilde {
+    display: flex;
+    flex: 1;
+    max-width: 90%;
+
+}
+
+#silksongTrailer {
+    display: flex;
+    flex: 1;
+    width: 100%;
+
+}
 
 
 #SILKSONG-IS-REAL {
@@ -77,4 +107,43 @@ html, body {
 .flexbox:hover {
     transition: 1s;
     transform: scale(1.03);
+}
+
+@media screen and (max-width: 800px) {
+    html, body {
+        width: 100%;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: 4, 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        'header'
+        'menu'
+        'main'
+        'footer';
+    }
+
+    .header h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+    }
+
+    .menu {
+        grid-area: menu;
+        display: flex;
+        font-size: 2rem;
+    }
+
+    #chrisChanBilde {
+        max-width: 90%;
+    }
+
+    #silksongTrailer {
+        /* max-width: 50%; */
+        width: 100%;
+    }
+
 }
