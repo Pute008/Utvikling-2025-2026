@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skjema</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Skjema</h1>
+        </header>
+
+        <main>
+
+            <h2>Formeksempel (&lt;form&gt;)</h2>
+            
+            <form id="kontaktskjema">
+                <label for="navn">Navn:</label>
+                <input type="text" name="navn" id="navn" placeholder="Skriv ditt navn" required>
+
+                <label for="epost">Epost:</label>
+                <input type="email" name="epost" id="epost" placeholder="navn@eksempel.no" required>
+
+                <label for="passord">Passord:</label>
+                <input type="password" name="passord" id="passord" placeholder="Passord">
+
+                <fieldset>
+                    <legend>Velg interesser</legend>
+                    <label><input type="checkbox" name="interesse" id="koding">Koding</label>
+                    <label><input type="checkbox" name="interesse" id="design">Design</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Kjønn</legend>
+                    <label><input type="radio" name="kjonn" id="mann">Mann</label>
+                    <label><input type="radio" name="kjonn" id="kvinne">Kvinne</label>
+                    <label><input type="radio" name="kjonn" id="annet">Annet</label>
+                </fieldset>
+
+                <label for="fag">Favorittfag:</label>
+                <select name="fag" id="fag">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">JavaScript</option>
+                </select>
+
+                <button type="submit" class="btn">Send</button>
+            </form>
+
+            <div class="resultat"></div>
+        </main>
+
+        <footer>
+            Made by Felix Ellingsen Westby
+        </footer>
+
+    </div>
+</body>
+</html>
