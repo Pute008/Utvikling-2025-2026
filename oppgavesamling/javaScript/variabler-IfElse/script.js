@@ -38,7 +38,7 @@ const favorittJob = ["brannmann", "politi", "programmerer"];
 
 document.getElementById("favorittJobb").addEventListener("click", function(event) {
     event.preventDefault();
-    let dinJob = prompt("Hva er favorittjobben din? ");
+    let dinJob = prompt("Hva er favorittjobben din? ").toLocaleLowerCase();
 
     if (favorittJob.includes(dinJob)) {
         console.log("Jeg liker også å jobbe med " + dinJob);
