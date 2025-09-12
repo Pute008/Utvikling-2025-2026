@@ -6,13 +6,13 @@ let varerEl = document.getElementById("varer");
 
 // Vareoversikt
 let varer = [
-    { navn: "Gulrot", pris: 14.90, bilde: "mat_19.png", handlekurv: 0 },
-    { navn: "Rødløk", pris: 8.30, bilde: "mat_01.png", handlekurv: 0 },
-    { navn: "Agurk", pris: 12.90, bilde: "mat_14.png", handlekurv: 0 },
-    { navn: "Paprika", pris: 13.30, bilde: "mat_05.png", handlekurv: 0 },
-    { navn: "Potet", pris: 3.90, bilde: "mat_13.png", handlekurv: 0 },
-    { navn: "Tomat", pris: 4.90, bilde: "mat_08.png", handlekurv: 0 },
-    { navn: "Ost", pris: 10.90, bilde: "mat_10.png", handlekurv: 0 },
+    { navn: "Gulrot", pris: 14.90, bilde: "mat_19.png", handlekurv: 0, beskrivelse: "dette er en søt gulrot" },
+    { navn: "Rødløk", pris: 8.30, bilde: "mat_01.png", handlekurv: 0, beskrivelse: "dette er en søt gulrot" },
+    { navn: "Agurk", pris: 12.90, bilde: "mat_14.png", handlekurv: 0, beskrivelse: "dette er en søt gulrot" },
+    { navn: "Paprika", pris: 13.30, bilde: "mat_05.png", handlekurv: 0, beskrivelse: "dette er en søt gulrot" },
+    { navn: "Potet", pris: 3.90, bilde: "mat_13.png", handlekurv: 0, beskrivelse: "dette er en søt gulrot" },
+    { navn: "Tomat", pris: 4.90, bilde: "mat_08.png", handlekurv: 0, beskrivelse: "dette er en søt gulrot" },
+    { navn: "Ost", pris: 10.90, bilde: "mat_10.png", handlekurv: 0, beskrivelse: "dette er en søt gulrot" },
 ];
 
 // Lager div-elementer som viser fram varene
@@ -29,6 +29,9 @@ for (var i = 0; i < varer.length; i++) {
     varebilde = document.createElement("img");
     varebilde.src = "mat/" + varer[i].bilde;
 
+    varebeskrivelse = document.createElement("p");
+    varebeskrivelse.innerHTML = varer[i].beskrivelse;
+
     // Lager et p-element med pris for varen
     varepris = document.createElement("p");
     varepris.innerHTML = varer[i].pris + " kr";
@@ -42,6 +45,7 @@ for (var i = 0; i < varer.length; i++) {
     // Legger til alle elementene i div-elementet til varen
     varediv.appendChild(vareoverskrift);
     varediv.appendChild(varebilde);
+    varediv.appendChild(varebeskrivelse)
     varediv.appendChild(varepris);
     varediv.appendChild(vareknapp);
 
