@@ -11,7 +11,8 @@ let varer = [
     { navn: "Agurk", pris: 12.90, bilde: "mat_14.png", handlekurv: 0 },
     { navn: "Paprika", pris: 13.30, bilde: "mat_05.png", handlekurv: 0 },
     { navn: "Potet", pris: 3.90, bilde: "mat_13.png", handlekurv: 0 },
-    { navn: "Tomat", pris: 4.90, bilde: "mat_08.png", handlekurv: 0 }
+    { navn: "Tomat", pris: 4.90, bilde: "mat_08.png", handlekurv: 0 },
+    { navn: "Ost", pris: 10.90, bilde: "mat_10.png", handlekurv: 0 },
 ];
 
 // Lager div-elementer som viser fram varene
