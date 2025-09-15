@@ -65,6 +65,10 @@ function kjopVare(e) {
     oppdaterHandlekurv();
 }
 
+function fjernVare(e) {
+    
+}
+
 // Funksjon som oppdater handlekurven
 function oppdaterHandlekurv() {
     // Variabel for å holde orden på totalpris
