@@ -7,12 +7,24 @@
 </head>
 <body>
     <h1>Chat App - type enkel</h1>
+    <form id="skjema">
+        <label for="navn">Navn:</label>
+        <input type="text" id="navn" required>
+
+        <label for="melding">Melding:</label>
+        <input type="text" id="melding" required>
+
+        <button type="submit">Send Melding</button>
+    </form>
+
     <div id="utskrift">
         <!-- fylles ut av JS -->
     </div>
 
     <script>
         const utskrift = document.getElementById("utskrift");
+        const navnEl = document.getElementById("navn");
+        const meldingEl = document.getElementById("melding");
 
         async function skrivUtMeldinger() {
             const response = await fetch('/hentMeldinger');
@@ -20,10 +32,34 @@
             // console.log(meldinger);
             for (let melding of meldinger) {
                 console.log(melding.person + ": " + melding.melding);
+                const div = document.createElement("div");
+                div.innerHTML = "[" + melding.tid + "] <br> " + melding.person + ": " + melding.melding;
+                utskrift.appendChild(div);
             }
         }
 
         skrivUtMeldinger();
+
+        document.getElementById("skjema").addEventListener("submit", sendMelding);
+
+        async function sendMelding(e) {
+            e.preventDefault();
+
+            const person = navnEl.value.trim();
+            const melding = meldingEl.value.trim();
+            let tid = new Date().toISOString().replace('T', ' ').substring(0, 19);
+            // console.log(person, melding, tid);
+
+            const res = await fetch('/leggMelding', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ person, melding, tid })
+            });
+
+            skrivUtMeldinger();
+            meldingEl.value = '';
+        }
+
     </script>
 </body>
 </html>
