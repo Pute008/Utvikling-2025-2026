@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <form onsubmit="leggTilPerson(event)">
+            <label for="fornavn">Fornavn:</label>
+            <input type="text" id="fornavn" name="fornavn" required>
+
+            <label for="etternavn">Etternavn:</label>
+            <input type="text" id="etternavn" name="etternavn" required>
+
+            <label for="passord">Passord:</label>
+            <input type="password" id="passord" name="passord" required>
+
+            <button type="submit">Create User</button>
+        </form>
+        <p>New user? <a href="/newUser.html">Registrer deg</a></p>
+    </main>
+</body>
+
+<script>
+    async function leggTilPerson(event) {
+        event.preventDefault();        
+
+        const fornavn = document.getElementById("fornavn").value;
+        const etternavn = document.getElementById("etternavn").value;
+        const passord = document.getElementById("passord").value;
+
+        const response = await fetch("/leggTilPerson", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fornavn,
+                etternavn,
+                passord
+            })
+        });
+        const result = await response.json();
+        alert(result.message);
+        window.location.href='./index.html';
+
+    }
+</script>
+</html>
