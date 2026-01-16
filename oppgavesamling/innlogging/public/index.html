@@ -37,7 +37,7 @@
         });
 
         const result = await response.json();
-        if (!response) {
+        if (response.ok) {
             alert(result.message);
             window.location.href = result.redirect;
         } else {

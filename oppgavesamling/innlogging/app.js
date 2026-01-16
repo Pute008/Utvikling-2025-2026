@@ -1,6 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const session = require("express-session");
+
 const Database = require("better-sqlite3");
 const db = new Database("brukere.db");
 const app = express()
@@ -10,6 +11,10 @@ const port = 3000;
 app.use(express.json());
 
 app.use(express.static("public"))
+
+const path = require('path');
+
+// app.use('/beskyttet', kreverInnlogging, express.static(path.join(__dirname, 'beskyttet')));
 
 app.use
     (session({
@@ -55,14 +60,20 @@ app.post("/login", async (req, res) => {
     res.json({ message: "Innlogging vellykket", redirect: "/homeSide" })
 })
 
-app.get("/homeSide", kreverInnlogging, (req, res) => {
-    res.sendFile(__dirname + "../hidden/home.html");
+app.get("/getUser", (req, res) => {
+    const users = db.prepare("SELECT * FROM user").all();
+    res.json(users);
 });
 
-app.use('/hidden', kreverInnlogging, express.static(path.join(__dirname, 'secure')));
+app.get("/homeSide", kreverInnlogging, (req, res) => {
+    res.sendFile(__dirname + "/hidden/index.html");
+});
+
+// app.use('/hidden', kreverInnlogging, express.static(path.join(__dirname, 'secure')));
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`)
 })
+
 
 // app.use('/hidden', express.static(path.join(__dirname, 'hidden')));
