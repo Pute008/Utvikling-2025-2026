@@ -9,4 +9,5 @@ for (let index = 0; index < antallVinnere; index++) {
     navn.splice(n, 1);
 }
 console.table(vinner);
+console.log("hello");
 //# sourceMappingURL=greeter.js.map

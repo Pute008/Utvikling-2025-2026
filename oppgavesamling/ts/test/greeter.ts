@@ -7,6 +7,6 @@ for (let index = 0; index < antallVinnere; index++) {
     navn.splice(n, 1)
 }
 
-console.table(vinner)
+console.table(vinner);
 
-console.log("hello")
+console.log("hello");
