@@ -81,7 +81,8 @@ console.log("Løs oppgavene under ved å bruke array-funksjoner som filter, find
 console.log("--- OPPGAVE 1 ---");
 console.log("Oppgave: Filtrer ut alle ord som har 3 eller flere ordklasser");
 // Skriv koden din her:
-
+const treOrdklasser = ordbok.filter(ordbok => ordbok.ordklasser.length >= 3);
+console.table(treOrdklasser);
 
 // =====================================
 // OPPGAVE 2: find
@@ -90,7 +91,8 @@ console.log("Oppgave: Filtrer ut alle ord som har 3 eller flere ordklasser");
 console.log("\n--- OPPGAVE 2 ---");
 console.log("Oppgave: Finn det første ordet som har en popularitet over 85");
 // Skriv koden din her:
-
+const firstPerson = ordbok.find(ordbok => ordbok.popularitet >= 85);
+console.table(firstPerson);
 
 // =====================================
 // OPPGAVE 3: map
