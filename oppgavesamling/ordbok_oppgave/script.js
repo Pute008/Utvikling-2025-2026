@@ -101,7 +101,8 @@ console.table(firstPerson);
 console.log("\n--- OPPGAVE 3 ---");
 console.log("Oppgave: Lag et nytt array med bare ordene");
 // Skriv koden din her:
-
+const bareNavn = ordbok.map(ordbok => ordbok.ordklasser.definisjon);
+console.table(bareNavn);
 
 // =====================================
 // OPPGAVE 4: map (avansert)
@@ -111,7 +112,12 @@ console.log("Oppgave: Lag et nytt array med bare ordene");
 console.log("\n--- OPPGAVE 4 ---");
 console.log("Oppgave: Lag array med ord og antall ordklasser");
 // Skriv koden din her:
+const ordOgTall = ordbok.map(ordbok => ({
+    ordbok: ordbok.ord,
+    antallOrdKlasser: ordbok.ordklasser.length
+}));
 
+console.table(ordOgTall);
 
 // =====================================
 // OPPGAVE 5: reduce
