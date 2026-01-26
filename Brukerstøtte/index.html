@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC-Deler Butikk</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/app.js" defer></script>
+</head>
+<body>
+
+<header class="header">
+    <h1>PC-Deler Butikk</h1>
+    <nav>
+        <ul>
+            <li><a href="#produkter">Produkter</a></li>
+            <li><a href="#omoss">Om Oss</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h2>Finn de beste PC-delene</h2>
+        <p>Alt fra grafikkort til kjølesystemer – til gode priser!</p>
+    </div>
+</section>
+
+<section id="produkter" class="products">
+    <h2>Populære produkter</h2>
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="img/Grafikkort RTX 4070.jpg" alt="Grafikkort">
+            <h3>Grafikkort RTX 4070</h3>
+            <p class="price">kr 8 999</p>
+            <button onclick="addToCart('RTX 4070')">Legg i handlekurv</button>
+        </div>
+
+        <div class="product-card">
+            <img src="img/Prosessor AMD Ryzen 9.webp" alt="CPU">
+            <h3>Prosessor AMD Ryzen 9</h3>
+            <p class="price">kr 5 199</p>
+            <button onclick="addToCart('Ryzen 9')">Legg i handlekurv</button>
+        </div>
+
+        <div class="product-card">
+            <img src="img/DDR5 RAM 32GB.jpg" alt="RAM">
+            <h3>DDR5 RAM 32GB</h3>
+            <p class="price">kr 1 599</p>
+            <button onclick="addToCart('32GB RAM')">Legg i handlekurv</button>
+        </div>
+
+    </div>
+</section>
+
+<section id="omoss" class="about">
+    <h2>Om Oss</h2>
+    <p>Vi er en entusiastisk gjeng som elsker PC-bygging og komponenter. Vårt mål er å gi deg det beste utvalget og den beste hjelpen!</p>
+</section>
+
+<section id="kontakt" class="contact">
+    <h2>Kontakt</h2>
+    <form id="kontaktSkjema">
+        <input type="text" placeholder="Navn" required>
+        <input type="email" placeholder="E-post" required>
+        <textarea placeholder="Melding"></textarea>
+        <button type="submit">Send melding</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2026 PC-Deler Butikk</p>
+</footer>
+
+</body>
+</html>
