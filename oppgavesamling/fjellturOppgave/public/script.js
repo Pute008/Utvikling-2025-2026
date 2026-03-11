@@ -17,6 +17,10 @@ async function fetchData() {
             fjellhoyde.textContent = fjell.hoyde;
             rad.appendChild(fjellhoyde);
 
+            const fjellbeskrivelse = document.createElement('p');
+            fjellbeskrivelse.textContent = fjell.beskrivelse;
+            rad.appendChild(fjellbeskrivelse);
+
             tabellBody.appendChild(rad);
         });
         // console.log(data);
