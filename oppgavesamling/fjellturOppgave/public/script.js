@@ -1,3 +1,5 @@
+// const { createElement } = require("react");
+
 async function fetchData() {
     const tabellBody = document.querySelector('#table')
     try {
@@ -12,6 +14,15 @@ async function fetchData() {
             const fjellnavn = document.createElement('h1');
             fjellnavn.textContent = fjell.fjellnavn;
             rad.appendChild(fjellnavn)
+
+            if (fjell.foto) {
+                const foto = document.createElement('img');
+                foto.src = "/bilder/" + fjell.foto;
+                foto.alt = fjell.fjellnavn;
+                foto.style.height = "300px"
+
+                rad.appendChild(foto)
+            }
 
             const fjellhoyde = document.createElement('p');
             fjellhoyde.textContent = fjell.hoyde;

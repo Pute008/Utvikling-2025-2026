@@ -26,6 +26,16 @@ app.get('/fjell_info', (req, res) => {
     }
 })
 
+app.get('/allePersoner'), (req, res) => {
+    try {
+        const row = db.prepare('SELECT brukernavn FROM person').all();
+        res.json(row);
+    } catch (error) {
+        console.error('Error after catching brukernavn:', error);
+        res.status(500).json({ message: "Could not get brukernavn" });
+    }
+}
+
 app.listen(port, () => {
     console.log(`Server kjører på http://localhost:${port}`)
 });
