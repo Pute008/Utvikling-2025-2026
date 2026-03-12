@@ -1,5 +1,3 @@
-// const { createElement } = require("react");
-
 async function fetchData() {
     const tabellBody = document.querySelector('#table')
     try {

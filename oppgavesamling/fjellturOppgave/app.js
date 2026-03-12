@@ -26,7 +26,7 @@ app.get('/fjell_info', (req, res) => {
     }
 })
 
-app.get('/allePersoner'), (req, res) => {
+app.get('/allePersoner', (req, res) => {
     try {
         const row = db.prepare('SELECT brukernavn FROM person').all();
         res.json(row);
@@ -34,7 +34,35 @@ app.get('/allePersoner'), (req, res) => {
         console.error('Error after catching brukernavn:', error);
         res.status(500).json({ message: "Could not get brukernavn" });
     }
-}
+})
+
+app.get('/fjellturer/:brukernavn', (req, res) => {
+    const brukernavn = req.params.brukernavn;
+    if (!brukernavn) return res.status(400).json({ error: 'Mangler brukernavn' });
+
+    const row = db.prepare(`SELECT fjell.fjellnavn
+        FROM person
+        INNER JOIN fjelltur
+        ON person.brukernavn = fjelltur.brukernavn
+        INNER JOIN fjell
+        ON fjelltur.fjell_id = fjell.fjell_id
+        WHERE person.brukernavn = ?
+    `).all(brukernavn);
+    
+    res.json(row);
+})
+
+app.get('/fjellturer_hausnes', (req, res) => {
+    const row = db.prepare(`SELECT fjell.fjellnavn
+        FROM person
+        INNER JOIN fjelltur
+        ON person.brukernavn = fjelltur.brukernavn
+        INNER JOIN fjell
+        ON fjelltur.fjell_id = fjell.fjell_id
+        WHERE person.brukernavn = 'hausnes'
+    `).all();
+    res.json(row);
+})
 
 app.listen(port, () => {
     console.log(`Server kjører på http://localhost:${port}`)
