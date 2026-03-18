@@ -13,7 +13,7 @@ async function hentPersoner() {
 }
 document.addEventListener('DOMContentLoaded', hentPersoner)
 
-// se på og kanskej skrive selv senere
+// se på og kanskje skrive selv senere
 document.getElementById('personDropdown').addEventListener('change', async function() {
     const brukernavn = this.value;
     console.log(`Valgt person: ${brukernavn}`);
