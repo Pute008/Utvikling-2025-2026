@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Logger - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="dashboardScript.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-brand">Mountain Logger</h1>
+            <div class="nav-links">
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="add-trip.html">Add Trip</a>
+                <a href="friends-trips.html">Friends' Trips</a>
+                <a href="mountains-gallery.html">Gallery</a>
+                <button onclick="logout()" class="btn-logout">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <!-- User Stats Section -->
+        <div class="section profile-section">
+            <h2>📊 Your Stats</h2>
+            <div id="user-stats" class="stats-grid">
+                <p class="loading">Loading your stats...</p>
+            </div>
+        </div>
+
+        <!-- Achievements Section -->
+        <div class="section achievements-section">
+            <h2>🏆 Achievements</h2>
+            <div id="user-achievements" class="achievements-container">
+                <p class="loading">Loading achievements...</p>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <!-- Left column: My Trips -->
+            <div class="section">
+                <h2>My Mountain Climbs</h2>
+                <div id="my-trips" class="trips-list">
+                    <p class="loading">Loading your trips...</p>
+                </div>
+                <a href="add-trip.html" class="btn-primary">+ Add New Trip</a>
+            </div>
+
+            <!-- Right column: Friends -->
+            <div class="section">
+                <h2>Friends</h2>
+                
+                <div class="friends-subsection">
+                    <h3>Friend Requests (<span id="request-count">0</span>)</h3>
+                    <div id="friend-requests" class="friends-list">
+                        <p class="empty-message">No pending requests</p>
+                    </div>
+                </div>
+
+                <div class="friends-subsection">
+                    <h3>Your Friends</h3>
+                    <div id="my-friends" class="friends-list">
+                        <p class="loading">Loading friends...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="error-message" class="error-message"></div>
+</body>
+</html>

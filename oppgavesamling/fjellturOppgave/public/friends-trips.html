@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Logger - Friends' Trips</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="friends-tripsScript.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-brand">Mountain Logger</h1>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="add-trip.html">Add Trip</a>
+                <a href="friends-trips.html" class="active">Friends' Trips</a>
+                <button onclick="logout()" class="btn-logout">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="section">
+            <h2>Friends' Mountain Adventures</h2>
+            
+            <div class="user-search">
+                <div class="search-container">
+                    <input type="text" id="userSearch" placeholder="Search for users by name or username...">
+                    <div id="search-suggestions" class="search-suggestions"></div>
+                </div>
+                <button onclick="clearSearch()" class="btn-small">Clear</button>
+            </div>
+
+            <div id="user-info" class="user-info-section"></div>
+
+            <div id="friends-trips" class="trips-list">
+                <p class="empty-message">Select a friend to see their trips</p>
+            </div>
+
+            <div id="error-message" class="error-message"></div>
+        </div>
+    </div>
+</body>
+</html>

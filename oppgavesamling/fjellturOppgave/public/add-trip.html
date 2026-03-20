@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Logger - Add Trip</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="add-tripScript.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-brand">Mountain Logger</h1>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="add-trip.html" class="active">Add Trip</a>
+                <a href="friends-trips.html">Friends' Trips</a>
+                <button onclick="logout()" class="btn-logout">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="form-container">
+            <h2>Log Your Mountain Climb</h2>
+            
+            <form onsubmit="addTrip(event)">
+                <div class="form-group">
+                    <label for="mountain">Mountain:</label>
+                    <select id="mountain" name="mountain" required>
+                        <option value="">Select a mountain</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="duration">Duration (minutes):</label>
+                    <input type="number" id="duration" name="duration" placeholder="How long did the climb take?">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Notes:</label>
+                    <textarea id="description" name="description" placeholder="Describe your adventure..." rows="5"></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Log Trip</button>
+            </form>
+
+            <div id="error-message" class="error-message"></div>
+            <div id="success-message" class="success-message"></div>
+        </div>
+    </div>
+</body>
+</html>

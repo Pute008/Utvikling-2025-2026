@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Logger - Mountain Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="mountainGalleryScript.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-brand">Mountain Logger</h1>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="add-trip.html">Add Trip</a>
+                <a href="friends-trips.html">Friends' Trips</a>
+                <a href="mountains-gallery.html" class="active">Gallery</a>
+                <button onclick="logout()" class="btn-logout">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="section">
+            <h2>Mountain Gallery</h2>
+            
+            <div class="mountain-grid" id="mountainGrid">
+                <p class="loading">Loading mountains...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="error-message" class="error-message"></div>
+
+    <!-- Modal for gallery view -->
+    <div id="galleryModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeGallery()">&times;</span>
+            <div class="gallery-header">
+                <h2 id="mountainName"></h2>
+                <p id="mountainInfo"></p>
+            </div>
+            <div class="gallery-stats">
+                <div class="stat-box">
+                    <h4>Total Ascents</h4>
+                    <p id="ascentCount">0</p>
+                </div>
+                <div class="stat-box">
+                    <h4>Total Climbers</h4>
+                    <p id="climbersCount">0</p>
+                </div>
+            </div>
+            <div class="gallery-trips" id="galleryTrips">
+                <p class="loading">Loading trips...</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
